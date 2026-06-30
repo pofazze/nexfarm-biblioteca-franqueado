@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca do Franqueado · NexFarm Academy</title>
+<style>
+:root{
+  --navy:#040C22; --navy2:#0A1733; --azul:#0098D5; --ciano:#00CBF7;
+  --ink:#E8F1F9; --mut:#9FB2C9; --line:rgba(255,255,255,.08); --card:#0C1830;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--navy);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 500px at 78% 20%, rgba(0,152,213,.35), transparent 60%),
+  linear-gradient(180deg,#040C22,#0A1733)}
+.hero::after{content:"";position:absolute;inset:0;background:url('assets/hero.jpg') right center/contain no-repeat;opacity:.16;mix-blend-mode:screen}
+.hero .wrap{position:relative;z-index:2;padding:30px 28px 64px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 0 40px}
+.topbar img{height:40px}
+.topbar .nav{display:flex;gap:26px;font-size:14px;color:var(--mut);font-weight:600}
+.topbar .nav a:hover{color:var(--ciano)}
+.kicker{color:var(--ciano);font-weight:800;letter-spacing:5px;font-size:13px;margin-bottom:14px}
+.hero h1{font-size:58px;line-height:1.02;font-weight:900;letter-spacing:-1px;max-width:780px}
+.hero h1 .c{color:var(--azul)}
+.hero p.sub{color:var(--mut);font-size:18px;margin-top:18px;max-width:620px;line-height:1.5}
+.searchbar{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.searchbar input{flex:1;min-width:280px;background:rgba(255,255,255,.06);border:1px solid var(--line);
+  border-radius:14px;padding:16px 20px;color:#fff;font-size:16px;outline:none;backdrop-filter:blur(6px)}
+.searchbar input::placeholder{color:#7E91AB}
+.searchbar input:focus{border-color:var(--ciano);box-shadow:0 0 0 3px rgba(0,203,247,.18)}
+.stats{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
+.stats div b{font-size:26px;color:var(--ciano);font-weight:900}
+.stats div span{display:block;color:var(--mut);font-size:12.5px;font-weight:600;margin-top:2px}
+
+/* FILTROS */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:38px 0 26px}
+.chip{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:10px 18px;border-radius:30px;
+  font-size:14px;font-weight:700;cursor:pointer;transition:.15s}
+.chip:hover{color:#fff;border-color:rgba(255,255,255,.2)}
+.chip.on{background:var(--azul);border-color:var(--azul);color:#fff}
+
+/* GRID */
+.sec-title{font-size:13px;font-weight:800;letter-spacing:3px;color:var(--ciano);margin:46px 0 18px;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.2s;cursor:pointer}
+.card:hover{transform:translateY(-4px);border-color:rgba(0,203,247,.4);box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.card .cov{aspect-ratio:1240/600;background:#06101f;overflow:hidden;border-bottom:1px solid var(--line)}
+.card .cov img{width:100%;height:100%;object-fit:cover;object-position:top}
+.card .bd{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
+.tag{align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:1px;padding:5px 10px;border-radius:6px;margin-bottom:11px;text-transform:uppercase}
+.t-neg{background:rgba(0,152,213,.16);color:#5ec5f0}
+.t-pos{background:rgba(0,203,247,.14);color:#46d8f7}
+.t-tec{background:rgba(255,255,255,.08);color:#b9c8db}
+.card h3{font-size:18px;font-weight:800;line-height:1.2}
+.card .num{font-size:12px;font-weight:800;color:var(--azul);margin-bottom:5px;letter-spacing:1px}
+.card p{color:var(--mut);font-size:13.5px;line-height:1.5;margin-top:9px;flex:1}
+.card .go{margin-top:16px;display:inline-flex;align-items:center;gap:8px;color:var(--ciano);font-weight:700;font-size:14px}
+.card .go svg{transition:.2s}.card:hover .go svg{transform:translateX(4px)}
+.empty{color:var(--mut);padding:40px 0;font-size:16px;display:none}
+
+/* SHOWCASE */
+.showcase{background:linear-gradient(180deg,#0A1733,#040C22);margin-top:70px;padding:56px 0;border-top:1px solid var(--line)}
+.showcase h2{font-size:30px;font-weight:900;text-align:center}
+.showcase p.s{color:var(--mut);text-align:center;margin-top:10px;font-size:15px}
+.machines{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:36px}
+.machines figure{text-align:center;width:150px}
+.machines img{height:130px;object-fit:contain;filter:drop-shadow(0 18px 30px rgba(0,0,0,.5))}
+.machines figcaption{margin-top:12px;font-weight:800;font-size:14px}
+.machines figcaption span{display:block;color:var(--mut);font-size:11.5px;font-weight:600;margin-top:2px}
+
+/* RECURSOS */
+.res{padding:56px 0}
+.res h2{font-size:26px;font-weight:900;margin-bottom:6px}
+.res p.s{color:var(--mut);margin-bottom:24px}
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.lk{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);
+  border-radius:13px;padding:16px 18px;transition:.15s}
+.lk:hover{border-color:var(--ciano);background:#0e1c38}
+.lk b{font-size:15px}.lk span{display:block;color:var(--mut);font-size:12px;margin-top:1px}
+.lk .dot{width:9px;height:9px;border-radius:50%;background:var(--ciano);flex-shrink:0}
+
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:13px;text-align:center;background:#040C22}
+footer b{color:var(--ink)}
+@media(max-width:620px){.hero h1{font-size:40px}.topbar .nav{display:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <img src="assets/logo.png" alt="NexFarm 3D">
+      <nav class="nav"><a href="#modulos">Módulos</a><a href="#linha">Linha Bambu Lab</a><a href="#recursos">Recursos</a></nav>
+    </div>
+    <div class="kicker">NEXFARM ACADEMY</div>
+    <h1>Biblioteca do <span class="c">Franqueado</span></h1>
+    <p class="sub">Tudo que você precisa para dominar a impressora, encantar o cliente e lucrar com o pós-venda. Diagnóstico, Manutenção e Pós-Venda — Bambu Lab Série A1.</p>
+    <div class="searchbar">
+      <input id="q" type="text" placeholder="🔍  Buscar matéria, peça, tema... (ex: garantia, hotend, filamento, CFOP)">
+    </div>
+    <div class="stats">
+      <div><b>12</b><span>MATÉRIAS</span></div>
+      <div><b>120+</b><span>PÁGINAS</span></div>
+      <div><b>3</b><span>DEPARTAMENTOS</span></div>
+      <div><b>100%</b><span>ON-BRAND NEXFARM</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="modulos">
+  <div class="filters" id="filters">
+    <span class="chip on" data-f="all">Todos</span>
+    <span class="chip" data-f="neg">Negócio &amp; Marca</span>
+    <span class="chip" data-f="pos">Pós-venda &amp; Garantia</span>
+    <span class="chip" data-f="tec">Técnico &amp; Bancada</span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">Nenhuma matéria encontrada. Tente outro termo.</div>
+</main>
+
+<section class="showcase" id="linha">
+  <div class="wrap">
+    <h2>A linha Bambu Lab que você representa</h2>
+    <p class="s">Da entrada ao topo: recomende a máquina certa e abra a porta do upgrade.</p>
+    <div class="machines">
+      <figure><img src="assets/a1.png" alt="A1"><figcaption>Série A1<span>Entrada · AMS Lite</span></figcaption></figure>
+      <figure><img src="assets/p1s.png" alt="P1S"><figcaption>Série P1S<span>Intermediário · 24/7</span></figcaption></figure>
+      <figure><img src="assets/x1-carbon.png" alt="X1 Carbon"><figcaption>Série X1 Carbon<span>Premium · LIDAR</span></figcaption></figure>
+      <figure><img src="assets/h2d.png" alt="H2D"><figcaption>Série H2D<span>Multifuncional · Laser</span></figcaption></figure>
+      <figure><img src="assets/x2d.png" alt="X2D"><figcaption>Série X2D<span>2026 · Dual-Nozzle</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap res" id="recursos">
+  <h2>Recursos oficiais Bambu Lab</h2>
+  <p class="s">A fonte da verdade — consulte sempre antes de qualquer diagnóstico ou decisão de garantia.</p>
+  <div class="links">
+    <a class="lk" target="_blank" href="https://wiki.bambulab.com"><span class="dot"></span><div><b>Bambu Lab Wiki</b><span>wiki.bambulab.com · guias e peças</span></div></a>
+    <a class="lk" target="_blank" href="https://makerworld.com"><span class="dot"></span><div><b>MakerWorld</b><span>makerworld.com · modelos 1-clique</span></div></a>
+    <a class="lk" target="_blank" href="https://bambulab.com/en/download"><span class="dot"></span><div><b>Bambu Studio</b><span>bambulab.com/download · slicer</span></div></a>
+    <a class="lk" target="_blank" href="https://bambulab.com/en/handy"><span class="dot"></span><div><b>Bambu Handy</b><span>app · monitoramento</span></div></a>
+    <a class="lk" target="_blank" href="https://store.bambulab.com"><span class="dot"></span><div><b>Loja oficial</b><span>store.bambulab.com</span></div></a>
+  </div>
+</section>
+
+<footer>
+  <b>NexFarm 3D</b> · Franqueadora de Print Farms — Biblioteca do Franqueado · NexFarm Academy<br>
+  Material de treinamento interno · Tecnologia Bambu Lab
+</footer>
+
+<script>
+const MODS=[
+ {n:"01",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Introdução & História da Bambu Lab",d:"A origem ex-DJI, o posicionamento, o market share e a filosofia da marca que você representa.",k:"dji historia marca posicionamento mercado introducao",f:"01 - Introducao e Historia.pdf"},
+ {n:"02",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Linha de Produtos & Ecossistema",d:"A família A1/P1/X1/H, MakerWorld, Bambu Studio, Handy, Farm Manager e Wiki.",k:"produtos linha ecossistema makerworld studio handy farm manager a1 p1 x1 h2d",f:"02 - Linha de Produtos e Ecossistema.pdf"},
+ {n:"03",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Comunicação & Atendimento de Elite",d:"O Jeito 3D Touch: pilares, scripts prontos, 7 tipos de cliente e tons de voz.",k:"comunicacao atendimento cliente script tom de voz pos-venda 3d touch",f:"03 - Comunicacao e Atendimento de Elite.pdf"},
+ {n:"04",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Pós-Venda, Vendas & Marketing",d:"CAC, LTV, suporte reativo × proativo, régua de contato e marketing de autoridade.",k:"posvenda vendas marketing cac ltv regua recompra conteudo",f:"04 - Pos-Venda e Marketing.pdf"},
+ {n:"05",dep:"pos",tag:"Pós-venda & Garantia",cls:"t-pos",t:"Assistência Técnica & POP",d:"Do técnico ao gestor: processos, POP, fluxo de atendimento e documentação obrigatória.",k:"assistencia pop processo fluxo documentacao numero de serie nota fiscal logs",f:"05 - Assistencia Tecnica e POP.pdf"},
+ {n:"06",dep:"pos",tag:"Pós-venda & Garantia",cls:"t-pos",t:"Legislação, CDC & Garantias",d:"Garantia legal × contratual, consumível, desgaste, mau uso e o que pode prometer.",k:"legislacao cdc garantia legal contratual consumivel desgaste mau uso prazo",f:"06 - Legislacao CDC e Garantias.pdf"},
+ {n:"07",dep:"pos",tag:"Pós-venda & Garantia",cls:"t-pos",t:"Documentos Fiscais na Garantia",d:"CFOP, ICMS, RMA e os tipos de nota fiscal no conserto, troca e devolução.",k:"fiscal cfop icms rma nota fiscal conserto troca devolucao remessa",f:"07 - Documentos Fiscais na Garantia.pdf"},
+ {n:"08",dep:"pos",tag:"Pós-venda & Garantia",cls:"t-pos",t:"Política de Garantia Bambu Lab",d:"O que cobre e não cobre, consumíveis, exceções e o checklist de decisão técnica.",k:"garantia bambu lab cobre nao cobre consumivel excecao checklist politica",f:"08 - Politica de Garantia Bambu Lab.pdf"},
+ {n:"09",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Filamentos, Umidade & Qualidade",d:"Por que o material é a causa nº1, secagem, armazenamento e comparativo Bambu.",k:"filamento umidade secagem pla petg abs asa tpu pahtcf qualidade material",f:"09 - Filamentos Umidade e Qualidade.pdf"},
+ {n:"10",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Troubleshooting de Defeitos",d:"9 defeitos de impressão: causa e solução. Clogs, warping, stringing, camadas e mais.",k:"troubleshooting defeito clog warping stringing subextrusao gloss delaminacao camada",f:"10 - Troubleshooting de Defeitos.pdf"},
+ {n:"11",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Anatomia da A1: Catálogo de Peças",d:"As 56 peças por família, com SKU, função, sintomas e guia de substituição.",k:"pecas catalogo sku hotend bico correia motor placa mae fonte ams mesa pei anatomia",f:"11 - Anatomia da A1 - Catalogo de Pecas.pdf"},
+ {n:"12",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Desmontagem, Manutenção & Calibração",d:"Vistas explodidas, manutenção preventiva, calibração e problemas clássicos da A1.",k:"desmontagem manutencao calibracao preventiva flow input shaping nivelamento explodida",f:"12 - Desmontagem Manutencao e Calibracao.pdf"},
+];
+const grid=document.getElementById('grid'), empty=document.getElementById('empty');
+let filt="all", term="";
+function render(){
+  grid.innerHTML="";
+  const list=MODS.filter(m=>(filt==="all"||m.dep===filt) &&
+    (term==="" || (m.t+" "+m.d+" "+m.k).toLowerCase().includes(term)));
+  empty.style.display=list.length?"none":"block";
+  for(const m of list){
+    const a=document.createElement('a');
+    a.className="card"; a.href="pdfs/"+m.n+".pdf"; a.target="_blank";
+    a.innerHTML=`<div class="cov"><img src="capas/${m.n}.png" loading="lazy" alt=""></div>
+      <div class="bd"><span class="tag ${m.cls}">${m.tag}</span>
+      <div class="num">MÓDULO ${m.n}</div><h3>${m.t}</h3><p>${m.d}</p>
+      <span class="go">Abrir módulo
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>`;
+    grid.appendChild(a);
+  }
+}
+document.getElementById('q').addEventListener('input',e=>{term=e.target.value.toLowerCase().trim();render()});
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on'); filt=c.dataset.f; render();
+}));
+render();
+</script>
+</body>
+</html>
