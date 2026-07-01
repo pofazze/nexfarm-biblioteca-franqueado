@@ -16,66 +16,67 @@ a{color:inherit;text-decoration:none}
 
 /* HERO */
 .hero{position:relative;overflow:hidden;background:
-  radial-gradient(900px 500px at 78% 20%, rgba(0,152,213,.35), transparent 60%),
+  radial-gradient(900px 520px at 80% 15%, rgba(0,152,213,.38), transparent 62%),
+  radial-gradient(700px 400px at 10% 90%, rgba(0,203,247,.14), transparent 60%),
   linear-gradient(180deg,#040C22,#0A1733)}
-.hero::after{content:"";position:absolute;inset:0;background:url('assets/hero.jpg') right center/contain no-repeat;opacity:.16;mix-blend-mode:screen}
-.hero .wrap{position:relative;z-index:2;padding:30px 28px 64px}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 0 40px}
-.topbar img{height:40px}
+.hero::after{content:"";position:absolute;inset:0;background:url('assets/hero.jpg') right center/contain no-repeat;opacity:.14;mix-blend-mode:screen}
+.hero .wrap{position:relative;z-index:2;padding:26px 28px 60px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:6px 0 44px}
+.topbar img{height:38px}
 .topbar .nav{display:flex;gap:26px;font-size:14px;color:var(--mut);font-weight:600}
 .topbar .nav a:hover{color:var(--ciano)}
 .kicker{color:var(--ciano);font-weight:800;letter-spacing:5px;font-size:13px;margin-bottom:14px}
-.hero h1{font-size:58px;line-height:1.02;font-weight:900;letter-spacing:-1px;max-width:780px}
+.hero h1{font-size:56px;line-height:1.03;font-weight:900;letter-spacing:-1px;max-width:800px}
 .hero h1 .c{color:var(--azul)}
-.hero p.sub{color:var(--mut);font-size:18px;margin-top:18px;max-width:620px;line-height:1.5}
+.hero p.sub{color:var(--mut);font-size:18px;margin-top:18px;max-width:640px;line-height:1.55}
 .searchbar{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .searchbar input{flex:1;min-width:280px;background:rgba(255,255,255,.06);border:1px solid var(--line);
   border-radius:14px;padding:16px 20px;color:#fff;font-size:16px;outline:none;backdrop-filter:blur(6px)}
 .searchbar input::placeholder{color:#7E91AB}
 .searchbar input:focus{border-color:var(--ciano);box-shadow:0 0 0 3px rgba(0,203,247,.18)}
-.stats{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
-.stats div b{font-size:26px;color:var(--ciano);font-weight:900}
-.stats div span{display:block;color:var(--mut);font-size:12.5px;font-weight:600;margin-top:2px}
+.stats{display:flex;gap:34px;margin-top:32px;flex-wrap:wrap}
+.stats div b{font-size:27px;color:var(--ciano);font-weight:900}
+.stats div span{display:block;color:var(--mut);font-size:12.5px;font-weight:600;margin-top:2px;letter-spacing:.5px}
 
 /* FILTROS */
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin:38px 0 26px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:40px 0 4px}
 .chip{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:10px 18px;border-radius:30px;
-  font-size:14px;font-weight:700;cursor:pointer;transition:.15s}
+  font-size:14px;font-weight:700;cursor:pointer;transition:.15s;user-select:none}
 .chip:hover{color:#fff;border-color:rgba(255,255,255,.2)}
 .chip.on{background:var(--azul);border-color:var(--azul);color:#fff}
 
-/* GRID */
-.sec-title{font-size:13px;font-weight:800;letter-spacing:3px;color:var(--ciano);margin:46px 0 18px;text-transform:uppercase}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+/* GRID — capas retrato estilo livro */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:24px;margin-top:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
   display:flex;flex-direction:column;transition:.2s;cursor:pointer}
-.card:hover{transform:translateY(-4px);border-color:rgba(0,203,247,.4);box-shadow:0 18px 50px rgba(0,0,0,.45)}
-.card .cov{aspect-ratio:1240/600;background:#06101f;overflow:hidden;border-bottom:1px solid var(--line)}
-.card .cov img{width:100%;height:100%;object-fit:cover;object-position:top}
-.card .bd{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
-.tag{align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:1px;padding:5px 10px;border-radius:6px;margin-bottom:11px;text-transform:uppercase}
-.t-neg{background:rgba(0,152,213,.16);color:#5ec5f0}
-.t-pos{background:rgba(0,203,247,.14);color:#46d8f7}
-.t-tec{background:rgba(255,255,255,.08);color:#b9c8db}
-.card h3{font-size:18px;font-weight:800;line-height:1.2}
-.card .num{font-size:12px;font-weight:800;color:var(--azul);margin-bottom:5px;letter-spacing:1px}
-.card p{color:var(--mut);font-size:13.5px;line-height:1.5;margin-top:9px;flex:1}
-.card .go{margin-top:16px;display:inline-flex;align-items:center;gap:8px;color:var(--ciano);font-weight:700;font-size:14px}
+.card:hover{transform:translateY(-5px);border-color:rgba(0,203,247,.45);box-shadow:0 22px 55px rgba(0,0,0,.5)}
+.card .cov{aspect-ratio:640/905;background:#06101f;overflow:hidden;position:relative}
+.card .cov img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.card .cov .badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;letter-spacing:1px;
+  padding:5px 9px;border-radius:6px;text-transform:uppercase;backdrop-filter:blur(4px)}
+.t-neg{background:rgba(0,152,213,.28);color:#bfe6f8}
+.t-pos{background:rgba(0,203,247,.24);color:#c7f2ff}
+.t-tec{background:rgba(255,255,255,.16);color:#e6eef7}
+.card .bd{padding:15px 17px 18px;display:flex;flex-direction:column;flex:1;border-top:1px solid var(--line)}
+.card .num{font-size:11.5px;font-weight:800;color:var(--azul);margin-bottom:5px;letter-spacing:1px}
+.card h3{font-size:16px;font-weight:800;line-height:1.22}
+.card p{color:var(--mut);font-size:12.8px;line-height:1.5;margin-top:8px;flex:1}
+.card .go{margin-top:14px;display:inline-flex;align-items:center;gap:7px;color:var(--ciano);font-weight:700;font-size:13.5px}
 .card .go svg{transition:.2s}.card:hover .go svg{transform:translateX(4px)}
-.empty{color:var(--mut);padding:40px 0;font-size:16px;display:none}
+.empty{color:var(--mut);padding:50px 0;font-size:16px;display:none;text-align:center}
 
 /* SHOWCASE */
-.showcase{background:linear-gradient(180deg,#0A1733,#040C22);margin-top:70px;padding:56px 0;border-top:1px solid var(--line)}
+.showcase{background:linear-gradient(180deg,#0A1733,#040C22);margin-top:74px;padding:58px 0;border-top:1px solid var(--line)}
 .showcase h2{font-size:30px;font-weight:900;text-align:center}
 .showcase p.s{color:var(--mut);text-align:center;margin-top:10px;font-size:15px}
-.machines{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:36px}
+.machines{display:flex;justify-content:center;align-items:flex-end;gap:34px;flex-wrap:wrap;margin-top:40px}
 .machines figure{text-align:center;width:150px}
-.machines img{height:130px;object-fit:contain;filter:drop-shadow(0 18px 30px rgba(0,0,0,.5))}
-.machines figcaption{margin-top:12px;font-weight:800;font-size:14px}
+.machines img{height:132px;object-fit:contain;filter:drop-shadow(0 20px 30px rgba(0,0,0,.55))}
+.machines figcaption{margin-top:14px;font-weight:800;font-size:14px}
 .machines figcaption span{display:block;color:var(--mut);font-size:11.5px;font-weight:600;margin-top:2px}
 
 /* RECURSOS */
-.res{padding:56px 0}
+.res{padding:58px 0}
 .res h2{font-size:26px;font-weight:900;margin-bottom:6px}
 .res p.s{color:var(--mut);margin-bottom:24px}
 .links{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
@@ -85,9 +86,9 @@ a{color:inherit;text-decoration:none}
 .lk b{font-size:15px}.lk span{display:block;color:var(--mut);font-size:12px;margin-top:1px}
 .lk .dot{width:9px;height:9px;border-radius:50%;background:var(--ciano);flex-shrink:0}
 
-footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:13px;text-align:center;background:#040C22}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--mut);font-size:13px;text-align:center;background:#040C22;line-height:1.7}
 footer b{color:var(--ink)}
-@media(max-width:620px){.hero h1{font-size:40px}.topbar .nav{display:none}}
+@media(max-width:620px){.hero h1{font-size:38px}.topbar .nav{display:none}}
 </style>
 </head>
 <body>
@@ -106,7 +107,7 @@ footer b{color:var(--ink)}
     </div>
     <div class="stats">
       <div><b>12</b><span>MATÉRIAS</span></div>
-      <div><b>120+</b><span>PÁGINAS</span></div>
+      <div><b>140+</b><span>PÁGINAS</span></div>
       <div><b>3</b><span>DEPARTAMENTOS</span></div>
       <div><b>100%</b><span>ON-BRAND NEXFARM</span></div>
     </div>
@@ -159,7 +160,7 @@ footer b{color:var(--ink)}
 const MODS=[
  {n:"01",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Introdução & História da Bambu Lab",d:"A origem ex-DJI, o posicionamento, o market share e a filosofia da marca que você representa.",k:"dji historia marca posicionamento mercado introducao",f:"01 - Introducao e Historia.pdf"},
  {n:"02",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Linha de Produtos & Ecossistema",d:"A família A1/P1/X1/H, MakerWorld, Bambu Studio, Handy, Farm Manager e Wiki.",k:"produtos linha ecossistema makerworld studio handy farm manager a1 p1 x1 h2d",f:"02 - Linha de Produtos e Ecossistema.pdf"},
- {n:"03",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Comunicação & Atendimento de Elite",d:"O Jeito 3D Touch: pilares, scripts prontos, 7 tipos de cliente e tons de voz.",k:"comunicacao atendimento cliente script tom de voz pos-venda 3d touch",f:"03 - Comunicacao e Atendimento de Elite.pdf"},
+ {n:"03",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Comunicação & Atendimento de Elite",d:"O Jeito NexFarm: pilares, scripts prontos, 7 tipos de cliente e tons de voz.",k:"comunicacao atendimento cliente script tom de voz pos-venda jeito nexfarm",f:"03 - Comunicacao e Atendimento de Elite.pdf"},
  {n:"04",dep:"neg",tag:"Negócio & Marca",cls:"t-neg",t:"Pós-Venda, Vendas & Marketing",d:"CAC, LTV, suporte reativo × proativo, régua de contato e marketing de autoridade.",k:"posvenda vendas marketing cac ltv regua recompra conteudo",f:"04 - Pos-Venda e Marketing.pdf"},
  {n:"05",dep:"pos",tag:"Pós-venda & Garantia",cls:"t-pos",t:"Assistência Técnica & POP",d:"Do técnico ao gestor: processos, POP, fluxo de atendimento e documentação obrigatória.",k:"assistencia pop processo fluxo documentacao numero de serie nota fiscal logs",f:"05 - Assistencia Tecnica e POP.pdf"},
  {n:"06",dep:"pos",tag:"Pós-venda & Garantia",cls:"t-pos",t:"Legislação, CDC & Garantias",d:"Garantia legal × contratual, consumível, desgaste, mau uso e o que pode prometer.",k:"legislacao cdc garantia legal contratual consumivel desgaste mau uso prazo",f:"06 - Legislacao CDC e Garantias.pdf"},
@@ -167,7 +168,7 @@ const MODS=[
  {n:"08",dep:"pos",tag:"Pós-venda & Garantia",cls:"t-pos",t:"Política de Garantia Bambu Lab",d:"O que cobre e não cobre, consumíveis, exceções e o checklist de decisão técnica.",k:"garantia bambu lab cobre nao cobre consumivel excecao checklist politica",f:"08 - Politica de Garantia Bambu Lab.pdf"},
  {n:"09",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Filamentos, Umidade & Qualidade",d:"Por que o material é a causa nº1, secagem, armazenamento e comparativo Bambu.",k:"filamento umidade secagem pla petg abs asa tpu pahtcf qualidade material",f:"09 - Filamentos Umidade e Qualidade.pdf"},
  {n:"10",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Troubleshooting de Defeitos",d:"9 defeitos de impressão: causa e solução. Clogs, warping, stringing, camadas e mais.",k:"troubleshooting defeito clog warping stringing subextrusao gloss delaminacao camada",f:"10 - Troubleshooting de Defeitos.pdf"},
- {n:"11",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Anatomia da A1: Catálogo de Peças",d:"As 56 peças por família, com SKU, função, sintomas e guia de substituição.",k:"pecas catalogo sku hotend bico correia motor placa mae fonte ams mesa pei anatomia",f:"11 - Anatomia da A1 - Catalogo de Pecas.pdf"},
+ {n:"11",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Anatomia da A1: Catálogo de Peças",d:"As peças por família, com SKU, função, sintomas e guia de substituição.",k:"pecas catalogo sku hotend bico correia motor placa mae fonte ams mesa pei anatomia",f:"11 - Anatomia da A1 - Catalogo de Pecas.pdf"},
  {n:"12",dep:"tec",tag:"Técnico & Bancada",cls:"t-tec",t:"Desmontagem, Manutenção & Calibração",d:"Vistas explodidas, manutenção preventiva, calibração e problemas clássicos da A1.",k:"desmontagem manutencao calibracao preventiva flow input shaping nivelamento explodida",f:"12 - Desmontagem Manutencao e Calibracao.pdf"},
 ];
 const grid=document.getElementById('grid'), empty=document.getElementById('empty');
@@ -179,10 +180,9 @@ function render(){
   empty.style.display=list.length?"none":"block";
   for(const m of list){
     const a=document.createElement('a');
-    a.className="card"; a.href="pdfs/"+m.n+".pdf"; a.target="_blank";
-    a.innerHTML=`<div class="cov"><img src="capas/${m.n}.png" loading="lazy" alt=""></div>
-      <div class="bd"><span class="tag ${m.cls}">${m.tag}</span>
-      <div class="num">MÓDULO ${m.n}</div><h3>${m.t}</h3><p>${m.d}</p>
+    a.className="card"; a.href="pdfs/"+m.n+".pdf"; a.target="_blank"; a.rel="noopener";
+    a.innerHTML=`<div class="cov"><img src="capas/${m.n}.png" loading="lazy" alt="Capa ${m.t}"><span class="badge ${m.cls}">${m.tag}</span></div>
+      <div class="bd"><div class="num">MÓDULO ${m.n}</div><h3>${m.t}</h3><p>${m.d}</p>
       <span class="go">Abrir módulo
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>`;
     grid.appendChild(a);
